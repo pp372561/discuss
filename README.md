@@ -44,10 +44,10 @@
 
 |技术/框架|版本|核心作用|
 |---|---|---|
-|Spring MVC|6.1.13|请求分发、依赖注入、视图解析|
-|Jakarta Servlet|6.1.0|适配 Web 容器接口，支撑 Servlet 运行|
-|Hibernate Validator|9.0.1.Final|后端数据校验注解支持，简化校验逻辑|
-|JSTL|3.0.1|前端页面数据遍历、条件渲染|
+|Spring MVC|6.1.13|使用 @Controller @GetMapping @PostMapping @RequestMapping 实现请求分发，通过 @Autowired 实现依赖注入，负责视图解析（返回 JSP 页面路径）|
+|Jakarta Servlet|6.1.0|使用 HttpServletRequest HttpSession 等 Servlet API，处理请求参数、会话管理（如存储登录用户信息），适配 Web 容器运行|
+|Java 基础类库||使用 java.util 包下的 List ArrayList Date stream 等类 / API，实现数据存储（模拟列表）、日期处理、集合操作|
+|JSP||作为视图层技术，控制器通过 return "thread/list" 等语句跳转至 JSP 页面（如 thread/list.jsp register.jsp），用于页面渲染|
 ### 3.2 前端技术
 
 - JSP：页面模板载体，嵌入 Java 代码实现动态内容生成
