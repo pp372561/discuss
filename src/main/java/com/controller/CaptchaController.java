@@ -27,7 +27,7 @@ public class CaptchaController {
     // 路径与原有一致：/captcha
     @GetMapping("/captcha")
     public void getCaptcha(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        // 完全复用原有逻辑，仅把dataService换成qaService
+
         BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = image.createGraphics();
 
@@ -59,4 +59,5 @@ public class CaptchaController {
         javax.imageio.ImageIO.write(image, "png", resp.getOutputStream());
         g.dispose();
     }
+
 }
