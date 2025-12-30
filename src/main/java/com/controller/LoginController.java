@@ -13,18 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/login") // 路径与原有一致：/login
+@RequestMapping("/login") 
 public class LoginController {
     @Autowired
     private QaService qaService;
 
-    // GET请求：跳转到登录页（对应原有doGet）
+    // GET请求：跳转到登录页
     @GetMapping
     public String loginPage() {
-        return "login"; // 视图解析器会解析为/WEB-INF/views/login.jsp
+        return "login"; 
     }
 
-    // POST请求：处理登录（对应原有doPost）
+    // POST请求：处理登录
     @PostMapping
     public String doLogin(
             @RequestParam String username,
@@ -33,7 +33,7 @@ public class LoginController {
             HttpSession session,
             HttpServletRequest req
     ) {
-        // 完全复用原有逻辑，仅替换dataService为qaService
+ 
         if (username == null || password == null || captcha == null) {
             req.setAttribute("error", "请填写完整信息");
             return "login";
@@ -56,4 +56,5 @@ public class LoginController {
         qaService.removeCaptcha(session.getId());
         return "redirect:/thread/list"; // 重定向到帖子列表
     }
+
 }
