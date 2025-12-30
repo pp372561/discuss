@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>discuss2</artifactId> <!-- 项目名和服务器一致 -->
+    <artifactId>discuss2</artifactId> 
     <version>1.0-SNAPSHOT</version>
     <name>discuss2</name>
     <packaging>war</packaging>
@@ -19,7 +19,6 @@
     </properties>
 
     <dependencies>
-        <!-- 原有依赖（完全保留） -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -44,7 +43,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Spring MVC依赖（完全保留） -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -69,9 +67,9 @@
     </dependencies>
 
     <build>
-        <finalName>discuss2</finalName> <!-- war包名和项目名一致 -->
+        <finalName>discuss2</finalName> 
         <plugins>
-            <!-- 编译插件：确保代码编译成.class文件 -->
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -86,7 +84,6 @@
                 </configuration>
             </plugin>
 
-            <!-- War插件：打包时包含classes和依赖 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -97,4 +94,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
