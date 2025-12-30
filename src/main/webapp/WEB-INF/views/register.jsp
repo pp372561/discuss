@@ -2,19 +2,16 @@
 <html>
 <head>
     <title>用户注册 - 讨论帖系统</title>
-    <!-- 复用已有的样式文件 -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/style.css">
 </head>
 <body>
 <div class="container">
     <h1>用户注册</h1>
 
-    <!-- 显示注册错误提示 -->
     <% if (request.getAttribute("error") != null) { %>
     <div class="error"><%= request.getAttribute("error") %></div>
     <% } %>
 
-    <!-- 注册表单 -->
     <form method="post" action="${pageContext.request.contextPath}/register">
         <div class="form-group">
             <label for="username">用户名</label>
@@ -31,10 +28,11 @@
         <button type="submit">提交注册</button>
     </form>
 
-    <!-- 跳转到登录页的链接 -->
+    <-- 跳转到登录页的链接 -->
     <div style="margin-top: 20px; text-align: center;">
         已有账号？<a href="${pageContext.request.contextPath}/login">立即登录</a>
     </div>
 </div>
 </body>
+
 </html>
