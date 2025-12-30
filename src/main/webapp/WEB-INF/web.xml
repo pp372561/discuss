@@ -4,7 +4,7 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 
-    <!-- Spring MVC前端控制器（核心） -->
+    <-- Spring MVC前端控制器 -->
     <servlet>
         <servlet-name>springmvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -19,7 +19,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- 中文编码过滤器 -->
+    <-- 中文编码过滤器 -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -37,7 +37,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- 欢迎页（复用原有逻辑） -->
+    <-- 欢迎页（复用原有逻辑） -->
     <welcome-file-list>
         <welcome-file>thread/list</welcome-file>
     </welcome-file-list>
