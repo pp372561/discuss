@@ -39,10 +39,11 @@
         <button type="submit">登录</button>
     </form>
 
-    <!-- 新增：注册入口链接 -->
+    <-- 注册入口链接 -->
     <div style="margin-top: 20px; text-align: center;">
         还没有账号？<a href="${pageContext.request.contextPath}/register">立即注册</a>
     </div>
 </div>
 </body>
+
 </html>
