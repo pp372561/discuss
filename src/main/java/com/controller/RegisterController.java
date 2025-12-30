@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/register") // 路径与原有一致：/register
+@RequestMapping("/register") 
 public class RegisterController {
     @Autowired
     private QaService qaService;
@@ -29,7 +29,7 @@ public class RegisterController {
             @RequestParam String confirmPwd,
             HttpServletRequest req
     ) {
-        // 完全复用原有逻辑
+        
         if (username == null || password == null || confirmPwd == null
                 || username.trim().isEmpty() || password.trim().isEmpty() || confirmPwd.trim().isEmpty()) {
             req.setAttribute("error", "请填写完整的注册信息！");
@@ -49,4 +49,5 @@ public class RegisterController {
         req.setAttribute("success", "注册成功！请使用新账号登录");
         return "login"; // 跳转到登录页
     }
+
 }
