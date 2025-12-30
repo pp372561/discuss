@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class QaService {
-    // Spring自动注入DataService（IOC核心：无需new，Spring自动给这个变量赋值）
+    // Spring自动注入DataService
     @Autowired
     private DataService dataService;
 
@@ -58,4 +58,5 @@ public class QaService {
     public List<Reply> getRepliesByThreadId(Long threadId) {
         return dataService.getRepliesByThreadId(threadId);
     }
+
 }
