@@ -9,12 +9,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.springframework.stereotype.Service; // 新增注解
+import org.springframework.stereotype.Service; 
 
-// 移除单例，加@Service让Spring管理
 @Service
 public class DataService {
-    // 保留原有所有成员变量，删除instance相关代码
+  
     private final Map<String, User> userMap = new ConcurrentHashMap<>();
     private final Map<Long, DiscussionThread> threadMap = new ConcurrentHashMap<>();
     private final Map<Long, List<Reply>> replyMap = new ConcurrentHashMap<>();
@@ -22,13 +21,12 @@ public class DataService {
     private final AtomicLong threadIdGenerator = new AtomicLong(1);
     private final AtomicLong replyIdGenerator = new AtomicLong(1);
 
-    // 私有构造器保留（初始化测试用户）
+
     private DataService() {
         userMap.put("admin", new User("admin", "123456"));
         userMap.put("user1", new User("user1", "123456"));
     }
 
-    // 保留所有原有业务方法（用户/验证码/帖子/回复），删除getInstance()
     public User getUserByUsername(String username) {
         return userMap.get(username);
     }
@@ -81,4 +79,5 @@ public class DataService {
     public List<Reply> getRepliesByThreadId(Long threadId) {
         return replyMap.getOrDefault(threadId, new ArrayList<>());
     }
+
 }
